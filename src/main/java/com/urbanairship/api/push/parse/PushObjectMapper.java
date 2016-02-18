@@ -278,6 +278,7 @@ public class PushObjectMapper {
 
             /* Tags */
                 .addSerializer(AddRemoveDeviceFromTagPayload.class, new AddRemoveDeviceFromTagPayloadSerializer())
+                .addSerializer(AddRemoveNamedUserFromTagPayload.class, new AddRemoveNamedUserFromTagPayloadSerializer())
                 .addSerializer(BatchModificationPayload.class, new BatchModificationPayloadSerializer())
 
             /* Named Users */
