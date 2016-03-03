@@ -84,7 +84,9 @@ public class APIClient {
     private final static String API_REPORTS_PUSH_RESPONSE_PATH = "/api/reports/responses/";
     private final static String API_REPORTS_APPS_OPEN_PATH = "/api/reports/opens/";
     private final static String API_REPORTS_TIME_IN_APP_PATH = "/api/reports/timeinapp/";
-    private final static String API_NAMED_USER_PATH = "/api/named_users/associate";
+    private final static String API_NAMED_USER = "/api/named_users/";
+    private final static String API_NAMED_USER_ASSOCIATE = API_NAMED_USER + "associate";
+    private final static String API_NAMED_USER_TAGS = API_NAMED_USER + "tags/";
 
     private final static Logger logger = LoggerFactory.getLogger("com.urbanairship.api");
     /* User auth */
@@ -219,7 +221,11 @@ public class APIClient {
     public APIClientResponse<APIPushResponse> push(PushPayload payload) throws IOException {
         Preconditions.checkNotNull(payload, "Payload required when executing a push operation");
         Request request = provisionRequest(Request.Post(baseURIResolution(baseURI, API_PUSH_PATH)));
-        request.bodyString(payload.toJSON(), ContentType.APPLICATION_JSON);
+        String payloadString = payload.toJSON();
+        if(logger.isDebugEnabled()){
+            logger.debug(payloadString);
+        }
+        request.bodyString(payloadString, ContentType.APPLICATION_JSON);
 
         if (logger.isDebugEnabled()) {
             logger.debug(String.format("Executing push request %s", request));
@@ -384,7 +390,7 @@ public class APIClient {
 
     public HttpResponse addRemoveNamedUserFromTag(AddRemoveNamedUserFromTagPayload payload) throws IOException {
         Preconditions.checkNotNull(payload, "Payload is required when adding and/or removing tags from a named user");
-        Request req = provisionRequest(Request.Post(baseURIResolution(baseURI, API_TAGS_PATH )));
+        Request req = provisionRequest(Request.Post(baseURIResolution(baseURI, API_NAMED_USER_TAGS )));
         req.bodyString(payload.toJSON(), ContentType.APPLICATION_JSON);
 
         if (logger.isDebugEnabled()) {
@@ -392,6 +398,17 @@ public class APIClient {
         }
 
         return provisionExecutor().execute(req).returnResponse();
+    }
+
+    public HttpResponse lookupNamedUser(String id) throws IOException {
+        Request req = provisionRequest(Request.Get(baseURIResolution(baseURI, API_NAMED_USER + "?id=" + id)));
+
+        if (logger.isDebugEnabled()) {
+            logger.debug(String.format("Executing list tags request %s", req));
+        }
+
+        return provisionExecutor()
+                .execute(req).returnResponse();
     }
 
 
@@ -917,7 +934,7 @@ public class APIClient {
 
     public HttpResponse associateNamedUser(AssociateNamedUserPayload payload) throws IOException {
         Preconditions.checkNotNull(payload, "Payload is required when associating a named user");
-        Request req = provisionRequest(Request.Post(baseURIResolution(baseURI, API_NAMED_USER_PATH)));
+        Request req = provisionRequest(Request.Post(baseURIResolution(baseURI, API_NAMED_USER_ASSOCIATE)));
         req.bodyString(payload.toJSON(), ContentType.APPLICATION_JSON);
 
         if (logger.isDebugEnabled()) {

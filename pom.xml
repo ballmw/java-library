@@ -10,7 +10,7 @@
 
     <groupId>com.urbanairship</groupId>
     <artifactId>java-client</artifactId>
-    <version>0.4.1-SNAPSHOT</version>
+    <version>0.4.1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Java Client</name>
@@ -51,32 +51,32 @@
         </resources>
 
         <plugins>
+            <!--
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-release-plugin</artifactId>
+              <version>2.5</version>
+              <configuration>
+                  <pushChanges>false</pushChanges>
+                  <arguments>-Dgpg.passphrase=${local.gpg.passphrase}</arguments>
+              </configuration>
+          </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <pushChanges>false</pushChanges>
-                    <arguments>-Dgpg.passphrase=${local.gpg.passphrase}</arguments>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.4</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-gpg-plugin</artifactId>
+              <version>1.4</version>
+              <executions>
+                  <execution>
+                      <id>sign-artifacts</id>
+                      <phase>verify</phase>
+                      <goals>
+                          <goal>sign</goal>
+                      </goals>
+                  </execution>
+              </executions>
+          </plugin>
+                 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -101,6 +101,9 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                        <configuration>
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -121,7 +124,17 @@
                     </execution>
                 </executions>
             </plugin>
-
+            <!--
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.3</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+-->
         </plugins>
     </build>
 

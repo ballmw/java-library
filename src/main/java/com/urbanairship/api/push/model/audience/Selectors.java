@@ -100,6 +100,15 @@ public class Selectors {
             .build();
     }
 
+    public static final Selector tagWithGroup(String tag, String tagClass) {
+        return BasicValueSelector.newBuilder()
+                .setType(SelectorType.TAG)
+                .setValue(tag)
+                .addAttribute("group", tagClass)
+                .build();
+    }
+
+
     public static final Selector autogroup(int value) {
         return autogroup(Integer.toString(value));
     }
