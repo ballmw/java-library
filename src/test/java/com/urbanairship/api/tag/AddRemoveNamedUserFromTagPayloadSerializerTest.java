@@ -36,8 +36,8 @@ public class AddRemoveNamedUserFromTagPayloadSerializerTest {
                 "\"named_user_id\":[\"user-1\",\"user-2\",\"user-3\"]" +
                 "}," +
                 "\"add\":{" +
-                "\"loyalty\":[\"tag1\",\"tag4\",\"tag5\"]," +
                 "\"crm\":[\"tag1\",\"tag2\",\"tag3\"]" +
+                "\"loyalty\":[\"tag1\",\"tag4\",\"tag5\"]," +
                 "}," +
                 "\"remove\":{" +
                 "\"loyalty\":[\"tag6\",\"tag7\"]" +
