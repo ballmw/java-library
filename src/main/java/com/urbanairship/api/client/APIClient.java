@@ -86,6 +86,7 @@ public class APIClient {
     private final static String API_REPORTS_TIME_IN_APP_PATH = "/api/reports/timeinapp/";
     private final static String API_NAMED_USER = "/api/named_users/";
     private final static String API_NAMED_USER_ASSOCIATE = API_NAMED_USER + "associate";
+    private final static String API_NAMED_USER_DISASSOCIATE = API_NAMED_USER + "disassociate";
     private final static String API_NAMED_USER_TAGS = API_NAMED_USER + "tags/";
 
     private final static Logger logger = LoggerFactory.getLogger("com.urbanairship.api");
@@ -939,6 +940,18 @@ public class APIClient {
 
         if (logger.isDebugEnabled()) {
             logger.debug(String.format("Executing associate named user request %s", req));
+        }
+
+        return provisionExecutor().execute(req).returnResponse();
+    }
+
+    public HttpResponse disassociateNamedUser(AssociateNamedUserPayload payload) throws IOException {
+        Preconditions.checkNotNull(payload, "Payload is required when associating a named user");
+        Request req = provisionRequest(Request.Post(baseURIResolution(baseURI, API_NAMED_USER_DISASSOCIATE)));
+        req.bodyString(payload.toJSON(), ContentType.APPLICATION_JSON);
+
+        if (logger.isDebugEnabled()) {
+            logger.debug(String.format("Executing disassociate named user request %s", req));
         }
 
         return provisionExecutor().execute(req).returnResponse();

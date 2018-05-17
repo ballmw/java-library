@@ -243,7 +243,7 @@ public class APIClientTest {
 
         // Setup a client and a push payload
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -310,11 +310,11 @@ public class APIClientTest {
 
         // Setup a client and a push payload
         APIClient proxyClient = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .setProxyInfo(ProxyInfo.newBuilder()
-                        .setProxyHost(new HttpHost("localhost", 8080))
+                        .setProxyHost(new HttpHost("localhost", 8087))
                         .setProxyCredentials(new UsernamePasswordCredentials("user", "password"))
                         .build())
                 .build();
@@ -383,7 +383,7 @@ public class APIClientTest {
     public void testListAllSchedules() {
         // Setup a client and a schedule payload
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -433,7 +433,7 @@ public class APIClientTest {
     public void testListSpecificSchedule() {
         // Setup a client and a schedule payload
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -471,7 +471,7 @@ public class APIClientTest {
     public void testListAllSchedulesWithParameters() {
         // Setup a client and a schedule payload
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -521,7 +521,7 @@ public class APIClientTest {
     public void testListAllSchedulesNextPage() {
         // Setup a client and a schedule payload
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -573,7 +573,7 @@ public class APIClientTest {
 
         // Setup a client and a schedule payload
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -645,7 +645,7 @@ public class APIClientTest {
 
         // Setup a client and a schedule payload
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -698,7 +698,7 @@ public class APIClientTest {
     public void testDeleteSpecificSchedule() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -736,7 +736,7 @@ public class APIClientTest {
 
         // Setup a client and a push payload
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -771,7 +771,7 @@ public class APIClientTest {
     public void testListTags() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -809,7 +809,7 @@ public class APIClientTest {
     public void testCreateTag() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -840,7 +840,7 @@ public class APIClientTest {
     public void testDeleteTag() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -872,7 +872,7 @@ public class APIClientTest {
     public void testAddRemoveDevicesFromTag() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -905,7 +905,7 @@ public class APIClientTest {
     public void testBatchModificationofTags() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -946,7 +946,7 @@ public class APIClientTest {
     public void testGetLocationBoundaryInformationQueryType() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1032,7 +1032,7 @@ public class APIClientTest {
     public void testGetLocationBoundaryInformationQuery() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1118,7 +1118,7 @@ public class APIClientTest {
     public void testGetLocationBoundaryInformationPointType() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1209,7 +1209,7 @@ public class APIClientTest {
     public void testGetLocationBoundaryInformationPoint() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1300,7 +1300,7 @@ public class APIClientTest {
     public void testGetLocationBoundaryInformationBoxType() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1394,7 +1394,7 @@ public class APIClientTest {
     public void testGetLocationBoundaryInformationBox() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1488,7 +1488,7 @@ public class APIClientTest {
     public void testListAllSegments() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1541,7 +1541,7 @@ public class APIClientTest {
     public void testListAllSegmentsNextPage() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1596,7 +1596,7 @@ public class APIClientTest {
     public void testListAllSegmentsWithParameters() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1649,7 +1649,7 @@ public class APIClientTest {
     public void testListSegment() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1751,7 +1751,7 @@ public class APIClientTest {
     public void testCreateSegment() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1792,7 +1792,7 @@ public class APIClientTest {
     public void testChangeSegment() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1833,7 +1833,7 @@ public class APIClientTest {
     public void testDeleteSegment() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1961,7 +1961,7 @@ public class APIClientTest {
 
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -1990,7 +1990,7 @@ public class APIClientTest {
     public void testListPushStatisticsInCSVString() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -2075,7 +2075,7 @@ public class APIClientTest {
     public void testListPushStatistics() {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -2147,7 +2147,7 @@ public class APIClientTest {
     public void testListPushStatisticsStartAfterEnd() throws IOException, IllegalArgumentException {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -2213,7 +2213,7 @@ public class APIClientTest {
     public void testListPushStatisticsStartAfterEndCSV() throws IOException, IllegalArgumentException {
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -2280,7 +2280,7 @@ public class APIClientTest {
 
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -2311,7 +2311,7 @@ public class APIClientTest {
 
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -2377,7 +2377,7 @@ public class APIClientTest {
 
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -2445,7 +2445,7 @@ public class APIClientTest {
 
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -2496,7 +2496,7 @@ public class APIClientTest {
 
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -2610,7 +2610,7 @@ public class APIClientTest {
 
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -2724,7 +2724,7 @@ public class APIClientTest {
 
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -2839,7 +2839,7 @@ public class APIClientTest {
 
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
@@ -2879,7 +2879,7 @@ public class APIClientTest {
 
         // Setup a client
         APIClient client = APIClient.newBuilder()
-                .setBaseURI("http://localhost:8080")
+                .setBaseURI("http://localhost:8087")
                 .setKey("key")
                 .setSecret("secret")
                 .build();
