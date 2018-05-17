@@ -88,7 +88,7 @@ public class APIClientTest {
 
     @ClassRule
     @Rule
-    public static WireMockClassRule wireMockClassRule = new WireMockClassRule();
+    public static WireMockClassRule wireMockClassRule = new WireMockClassRule(8087, 443);
 
 
     @Test(expected = NullPointerException.class)
