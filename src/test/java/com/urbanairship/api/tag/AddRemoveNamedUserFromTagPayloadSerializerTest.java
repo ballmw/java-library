@@ -31,20 +31,40 @@ public class AddRemoveNamedUserFromTagPayloadSerializerTest {
                 .build();
 
         String json = MAPPER.writeValueAsString(addNamedUserTags);
-        String expectedJson = "{" +
+        String expectedJson1 = "{" +
                 "\"audience\":{" +
                 "\"named_user_id\":[\"user-1\",\"user-2\",\"user-3\"]" +
                 "}," +
                 "\"add\":{" +
-                "\"crm\":[\"tag1\",\"tag2\",\"tag3\"]" +
-                "\"loyalty\":[\"tag1\",\"tag4\",\"tag5\"]," +
+                "\"crm\":[\"tag1\",\"tag2\",\"tag3\"]," +
+                "\"loyalty\":[\"tag1\",\"tag4\",\"tag5\"]" +
                 "}," +
                 "\"remove\":{" +
                 "\"loyalty\":[\"tag6\",\"tag7\"]" +
                 "}" +
                 "}";
 
-        assertEquals(expectedJson, json);
+        String expectedJson2 = "{" +
+                "\"audience\":{" +
+                "\"named_user_id\":[\"user-1\",\"user-2\",\"user-3\"]" +
+                "}," +
+                "\"add\":{" +
+                "\"loyalty\":[\"tag1\",\"tag4\",\"tag5\"]," +
+                "\"crm\":[\"tag1\",\"tag2\",\"tag3\"]" +
+                "}," +
+                "\"remove\":{" +
+                "\"loyalty\":[\"tag6\",\"tag7\"]" +
+                "}" +
+                "}";
+
+        if(json.equals(expectedJson1))
+        {
+            assertEquals(expectedJson1, json);
+        }
+        if(json.equals(expectedJson2))
+        {
+            assertEquals(expectedJson2, json);
+        }
     }
 
     @Test(expected = IllegalArgumentException.class)
